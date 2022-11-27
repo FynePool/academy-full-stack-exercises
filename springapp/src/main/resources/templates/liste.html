@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List examples</title>
+    <link rel="stylesheet" href="div.css">
+    <link rel="stylesheet" href="base.css">
+</head>
+
+<body style="background-color: antiquewhite;">
+    <h1>Some list and table examples in HTML</h1>
+    <button type="button" name="myButton">
+        <a href="/?name=List and Tables">/..back to home</a> 
+    </button>
+    <p><br></p>  
+    <div class="borderedDiv" id="listDiv" style="width: 450px; margin: auto;">
+        <!-- Ordered list: default is a series of element with a prefix ex. numeration -->
+        <label style="text-decoration: underline;"> Example of ordered list:</label> 
+        <ol id="olGreek">
+            <li>First orderd list element</li>
+            <li>Second orderd list element</li>
+            <li>Third orderd list element</li>
+            <li>Fourth orderd list element</li>
+        </ol>
+        <label style="text-decoration: underline;"> Example of matrioska lists:</label> 
+        <ol>
+            <li>First orderd list element</li>
+            <li>Second orderd list element</li>
+            <ul id="ulSquare">
+                <li>First inner unorderd list element</li>
+                <li>Second inner unorderd list element</li>
+            </ul>
+            <li>Third orderd list element</li>
+            <li>Fourth orderd list element</li>
+        </ol>
+        <!-- Unordered list -->
+        <label style="text-decoration: underline;"> Example of unordered list:</label>
+        <ul>
+            <li>First unorderd list element</li>
+            <li>Second unorderd list element</li>
+            <li>Third unorderd list element</li>
+            <li>Fourth unorderd list element</li>
+        </ul>
+    </div>
+    <p><br></p>
+    <div class="borderedDiv" id="listDiv" style="width: 450px; margin: auto;">
+        <!-- This is the standard struct of a table -->
+        <label style="text-decoration: underline;">Example of table:</label>
+        <table border="1px" style="width: 400px; margin: auto; text-align: center;">
+            <tr><th>col1</th><th>col2</th><th>col3</th></tr>
+            <tr><td>1,1</td><td>1,2</td><td>1,3</td></tr>
+            <tr><td>2,1</td><td>2,2</td><td>2,3</td></tr>
+            <tr><td>3,1</td><td>3,2</td><td>3,3</td></tr>
+        </table>  
+    </div>
+
+    <!-- Here we generally put javascript code so we delay it's execution after the render of the entire page -->
+    <script type="text/javascript" src="../javascript/common.js"></script>
+</body>
+
+</html>

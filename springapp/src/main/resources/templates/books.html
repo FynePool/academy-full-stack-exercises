@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book list</title>
+    <link rel="stylesheet" href="div.css">
+    <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+    <button type="button" name="myButton"><a href="/?name=Books list">/..back to home</a></button>
+    <p><br></p>
+    <div class="borderedDiv" id="listDiv" style="width: 300px; margin: auto;">
+        <h1>Book list</h1>
+        <ol>
+            <li th:each="book: ${books}" th:text="${book}">Titolo del libro</li>
+        </ol>
+    </div>
+
+</body>
+
+</html>

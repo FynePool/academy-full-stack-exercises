@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form examples</title>
+    <link rel="stylesheet" href="../styles/div.css">
+    <link rel="stylesheet" href="../styles/base.css">
+</head>
+<body style="background-color: antiquewhite;">
+    <h1>Some FORM in HTML</h1>
+    <button type="button" name="myButton"><a href="../index.html">/..back to home</a></button>
+    <p><br></p>
+    <!-- Form examples -->
+    <form action="form.html" method="get">
+        <div class="borderedDiv" id="listDiv" style="width: 300px; margin: auto;">
+            <div>
+                <label for="firstNameField" style="text-decoration: underline;">First name: </label>
+                <input id="firstNameField" name="firstName" placeholder="Enter first name here"/>
+            </div>
+            <div>
+                <label for="lastNameField" style="text-decoration: underline;">Last name: </label>
+                <input id="lastNameField" name="lastName" placeholder="Enter last name here"/>
+            </div>
+            <div>
+                <label style="text-decoration: underline;">Genre: </label>
+                <input id="genreM" type="radio" name="Genre" value="M">
+                <label for="genreM">Male</label>
+                <input id="genreF" type="radio" name="Genre" value="F">
+                <label for="genreF">Female</label>
+            </div>
+            <div>
+                <label style="text-decoration: underline;">Work type: </label>
+                <input id="workOS" type="checkbox" name="workType" value="OS">
+                <label for="workOS">On Site</label>
+                <input id="workR" type="checkbox" name="workType" value="R">
+                <label for="workR">Remote</label>
+            </div>
+            <div>
+                <label for="citySelect" style="text-decoration: underline;">City:</label>
+                <select name="city" id="citySelect">
+                    <option value="RM">Rome</option>
+                    <option value="MI">Milan</option>
+                    <option value="NA">Naples</option>
+                    <option value="BA">Bari</option>
+                </select>
+            </div>
+            <div>
+                <label for="birthDate" style="text-decoration: underline;">Birth date: </label>
+                <input type="date" name="birthDate" id="birthDate">
+            </div>
+            <div>
+                <label for="email" style="text-decoration: underline;">Email: </label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

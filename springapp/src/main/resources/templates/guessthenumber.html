@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <link rel="stylesheet" href="div.css">
+    <link rel="stylesheet" href="base.css">
+    <style type="text/css">
+        ol#messages li.correct {
+            background-color: rgba(0, 128, 0, 0.629);
+            color: white;
+        }
+
+        ol#messages li.too-low {
+            background-color: rgba(255, 255, 0, 0.629);
+        }
+
+        ol#messages li.too-high {
+            background-color: rgba(255, 0, 0, 0.629);
+        }
+
+        ol#messages li {
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body style="background-color:lightgray;">
+    <h1>Welcome to Guess The Number</h1>
+    <button type="button" name="myButton"><a href="/?name=Guess the number">/..back to home</a></button>
+    <p><br></p>
+    <div class="borderedDiv" id="listDiv" style="width: 500px; margin: auto;">
+        <div th:with="done=${tentativi.size() != 0 && tentativi[tentativi.size() - 1].result == 0}"
+            class="container-fluid">
+            <h1>Indovina il numero</h1>
+            <p style="font-size: 0.7em;">(Guess a number between 100 and 200)</p>
+            <form action="#" th:action="@{/guessthenumber}" th:object="${indovinaForm}" method="POST" autocomplete="off" class="row row-cols-lg-auto g-3 align-items-center" novalidate>
+                <div style="text-align: center;">
+                    <label for="tentativo" class="form-label">Your guess: </label>
+                    <input style="width: 75px;" th:field="*{number}" type="number" min="100" max="200" required class="form-control" th:errorclass="is-invalid" id="tentativo" th:disabled="${done}">
+                    <input type="submit" value="Try your guess" class="btn btn-primary" th:disabled="${done}" style="width: 150px; margin: auto;" />
+                    <div th:if="${#fields.hasErrors('number')}" th:errors="*{number}" class="invalid-feedback">Incorrect number</div>
+                </div>
+                <div th:if="${done}" style="text-align: center;">
+                    <a th:href="@{/guessthenumber/reset}" class="btn btn-success">New number</a>
+                </div>
+            </form>
+            <ol id="messages" class="list-group list-group-numbered" style="text-align: center;">
+                <li th:each="tentativo,status: ${tentativi}" th:text="${tentativo}"
+                    th:class="|list-group-item ${tentativo.className}|"
+                    th:style="${status.last ? 'opacity:0' : 'opacity:1'}" />
+            </ol>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.addEventListener('load', function () {
+            document.querySelector("input").focus();
+
+            let lastTentativo = document.querySelector("ol#messages li:last-child")
+            if (lastTentativo) lastTentativo.style.opacity = 1;
+        })
+    </script>
+</body>
+
+</html>

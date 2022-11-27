@@ -1,0 +1,7 @@
+.borderedDiv { 
+    background-color: rgb(234, 240, 246); 
+    color: rgb(51, 71, 91); 
+    border: 3px solid #00A4BD; 
+    border-radius: 10px;
+    padding: 5px;
+}

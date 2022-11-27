@@ -1,0 +1,31 @@
+<p><br></p>
+  <div class="card text-white bg-dark mb-3">
+    <div class="card-header">Author info</div>
+  <div class="card-body">
+    <h5 class="card-title">ID: {{author?.id}}</h5>
+    <h5 class="card-title">First Name: {{author?.firstName}}</h5>
+    <h5 class="card-title">Last Name: {{author?.lastName}}</h5>
+    <div class="btn-group btn-group-sm" style="border-color: black;">
+      <button type="button" class="btn btn-primary">Books</button>
+      <button type="button" class="btn btn-success">Modify</button>
+      <button type="button" class="btn btn-danger" (click)="deleted.emit(author)">Delete</button>
+    </div>
+  </div>
+  </div>
+
+<!-- <h1 style="text-align: left;">Author info:</h1>
+  <table class="table table-striped table-dark" style="vertical-align: middle;">
+    <thead class="thead-dark" style="text-align: center;">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+      </tr>
+    </thead>
+    <tbody style="text-align: center;">
+      <tr>
+        <th scope="row">{{author?.id}}</th>
+        <td>{{author?.firstName}}</td>
+        <td>{{author?.lastName}}</td>
+    </tbody>
+  </table> -->
