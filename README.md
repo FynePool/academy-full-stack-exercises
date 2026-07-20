@@ -1,2 +1,1 @@
-# Java Fulla Stack Academy (riccardo.rocco)
-Java exercises
+# Full Stack Academy
